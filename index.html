@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FakeStore - Proyecto JavaScript</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo">
+      <h1>FakeStore</h1>
+    </div>
+
+    <nav class="header__nav">
+      <button class="btn btn--ghost" type="button">Inicio</button>
+      <button class="btn btn--ghost" type="button">Productos</button>
+      <button class="btn btn--ghost" type="button">Contacto</button>
+    </nav>
+
+    <button class="header__cart-btn" type="button">
+      🛒
+      <span class="header__cart-count">0</span>
+    </button>
+  </header>
+
+  <main class="main">
+    <section class="filters">
+      <h2 class="visually-hidden">Filtros y búsqueda</h2>
+
+      <div class="filters__search">
+        <label for="search">Buscar producto</label>
+        <input
+          type="search"
+          id="search"
+          placeholder="Buscar por nombre o descripción"
+        />
+      </div>
+
+      <div class="filters__controls">
+        <div class="filters__group">
+          <label for="category">Categoría</label>
+          <select id="category">
+            <option value="all">Todas</option>
+            <!-- categorías dinámicas más adelante -->
+          </select>
+        </div>
+
+        <div class="filters__group">
+          <label for="sort">Ordenar por</label>
+          <select id="sort">
+            <option value="default">Por defecto</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="name-asc">Nombre A-Z</option>
+            <option value="name-desc">Nombre Z-A</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <section class="products" id="products">
+        <h2 class="visually-hidden">Listado de productos</h2>
+        <!-- JS inserta aquí las tarjetas -->
+      </section>
+
+      <aside class="cart" id="cart">
+        <h2>Carrito</h2>
+        <div class="cart__items" id="cart-items">
+          <!-- Items del carrito -->
+        </div>
+        <div class="cart__footer">
+          <span>Total:</span>
+          <span class="cart__total" id="cart-total">$0.00</span>
+          <button class="btn btn--primary" type="button">
+            Finalizar compra
+          </button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Proyecto FakeStore JavaScript - Nivel Junior</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
