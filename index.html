@@ -18,7 +18,7 @@
       <button class="btn btn--ghost" type="button">Contacto</button>
     </nav>
 
-    <button class="header__cart-btn" type="button">
+    <button class="header__cart-btn" type="button" aria-label="Carrito">
       🛒
       <span class="header__cart-count">0</span>
     </button>
@@ -42,7 +42,6 @@
           <label for="category">Categoría</label>
           <select id="category">
             <option value="all">Todas</option>
-            <!-- categorías dinámicas más adelante -->
           </select>
         </div>
 
@@ -66,17 +65,49 @@
       </section>
 
       <aside class="cart" id="cart">
-        <h2>Carrito</h2>
-        <div class="cart__items" id="cart-items">
-          <!-- Items del carrito -->
+        <div class="cart__head">
+          <h2 class="cart__title">Tu Carrito</h2>
+          <span class="cart__count" id="cart-count-label">0 artículos</span>
         </div>
-        <div class="cart__footer">
-          <span>Total:</span>
-          <span class="cart__total" id="cart-total">$0.00</span>
-          <button class="btn btn--primary" type="button">
-            Finalizar compra
+
+        <div class="cart__items" id="cart-items"></div>
+
+        <section class="cart__summary" aria-label="Resumen del pedido">
+          <h3 class="cart__summary-title">Resumen del pedido</h3>
+
+          <div class="cart__summary-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">$0.00</span>
+          </div>
+
+          <div class="cart__summary-row cart__summary-row--muted">
+            <span>Envío</span>
+            <span>Gratis</span>
+          </div>
+
+          <div class="cart__summary-row cart__summary-row--muted">
+            <span>Impuestos</span>
+            <span>Calculado al pagar</span>
+          </div>
+
+          <hr class="cart__divider" />
+
+          <div class="cart__summary-total">
+            <span>Total</span>
+            <strong id="cart-total">$0.00</strong>
+          </div>
+
+          <button class="btn btn--primary cart__pay-btn" type="button">
+            Proceder al pago
           </button>
-        </div>
+
+          <div class="cart__coupon">
+            <input class="cart__coupon-input" type="text" placeholder="Código de descuento" />
+            <button class="btn cart__coupon-btn" type="button">Aplicar</button>
+          </div>
+
+          <p class="cart__secure">Pago 100% seguro</p>
+        </section>
       </aside>
     </section>
   </main>
@@ -84,6 +115,8 @@
   <footer class="footer">
     <p>Proyecto FakeStore JavaScript - Nivel Junior</p>
   </footer>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
 
   <script src="js/app.js"></script>
 </body>

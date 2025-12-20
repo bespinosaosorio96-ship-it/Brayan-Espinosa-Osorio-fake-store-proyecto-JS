@@ -15,7 +15,7 @@ Incluye carrito de compras con persistencia en localStorage, búsqueda, filtros 
 - Diseño responsive (móvil, tablet, escritorio).
 
 ## Capturas
-> Agrega tus imágenes en: `assets/screenshots/`
+
 
 - Vista móvil: `assets/screenshots/mobile.png`
 - Vista tablet: `assets/screenshots/tablet.png`
