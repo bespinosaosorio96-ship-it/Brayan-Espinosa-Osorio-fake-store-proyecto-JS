@@ -272,9 +272,72 @@ body {
 /* ===== Breakpoints (solo declarados, usaremos después) ===== */
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Ajustes tablet aquí */
+  .main {
+    padding: 0 1.25rem;
+  }
+
+  /* filtros en fila cuando haya espacio */
+  .filters__controls {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .filters__group {
+    flex: 1;
+  }
+
+  /* productos en 2 columnas */
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* imagen un poco más grande */
+  .product-card__image {
+    max-width: 180px;
+    max-height: 180px;
+  }
 }
 
+
 @media (min-width: 1024px) {
-  /* Ajustes escritorio aquí */
+  .main {
+    padding: 0 1.5rem;
+  }
+
+  /* filtros más compactos y en una fila */
+  .filters__controls {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .filters__group {
+    flex: 1;
+  }
+
+  /* layout 2 columnas: productos + carrito */
+  .layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* productos más ancho */
+    gap: 1rem;
+    align-items: start;
+  }
+
+  /* productos en 3 columnas (puedes subir a 4 luego si quieres) */
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* carrito tipo sidebar sticky */
+  .cart {
+    position: sticky;
+    top: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+  }
+
+  .product-card__image {
+    max-width: 170px;
+    max-height: 170px;
+  }
 }
+
